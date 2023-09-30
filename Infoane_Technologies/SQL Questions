@@ -1,5 +1,26 @@
-1-Write a sql query to find 4th highest salary from employee table.
+1-Write a sql query to find 4th highest salary from employee table?
+Ans:-
 
-2-Write a sql query to fetch employee details whose name starts with a & ends with s from employee table.
+SELECT DISTINCT Salary
+FROM Employee E1
+WHERE 4 = (
+    SELECT COUNT(DISTINCT Salary)
+    FROM Employee E2
+    WHERE E1.Salary <= E2.Salary
+);
 
-3-Write a sql query to get all names in capital letter from employee table.
+
+2-Write a sql query to fetch employee details whose name starts with a & ends with s from employee table?
+Ans:-
+
+SELECT *
+FROM employee
+WHERE Name LIKE 'a%' AND Name LIKE '%s';
+
+
+3-Write a sql query to get all names in capital letter from employee table?
+Ans:-
+
+SELECT UPPER(Name) AS CapitalizedName
+FROM employee;
+
